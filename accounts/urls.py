@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^login/$', login, {'template_name': 'accounts/login.html'}),
     url(r'^profile/$', views.profile),
+    url(r'^register/$', views.register, name='register'),
 ]
