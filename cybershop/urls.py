@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', views.index),
     url('admin/', admin.site.urls),
     url(r'^shop/', include('shop.urls')),
+    url(r'^accounts/', include('accounts.urls')),
     #url('login/', view.login)
 ]
