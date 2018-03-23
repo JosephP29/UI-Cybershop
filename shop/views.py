@@ -14,3 +14,8 @@ def productdetail(request, title):
 		'product': product
 	}
 	return render(request, 'shop/productdetail.html', args)
+
+def searchresults(request):
+	productList = Product.objects.all()
+	args = { 'products': productList }
+	return render(request, 'shop/searchresults.html', args)	
