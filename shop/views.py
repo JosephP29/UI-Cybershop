@@ -32,7 +32,7 @@ def buy_product(request, title):
 			buy_form.save()
 
 			PurchaseOrder.objects.create(owner=request.user, units=buy_form.units, title=title, price=buy_form.total)
-			return redirect('acounts/profile')
+			return redirect('accounts/profile')
 	else:
 		buy_form = BuyProductForm()
 		args = {'form': buy_form, 'product': product}
