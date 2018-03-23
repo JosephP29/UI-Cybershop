@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<body>
-	<h1>This is the shop page.</h1>
-	{% for product in products %}
-		<img src="{{ product.image.url }}" width=100 heigh=100>
-		<a href="productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
-		 </br>
-	{% endfor %}
-</body>
+<!--h1>This is the shop page.</h1>
+{% for product in products %}
+	<img src="{{ product.image.url }}" width=100 heigh=100>
+	<a href="productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
+	 </br>
+{% endfor %}-->
+
+	{% if products %}
+		{% for product in products %}
+			<p>{{ product.title }}
+		{% endfor %}
+	{% endif %}
+	
 {% endblock %}
