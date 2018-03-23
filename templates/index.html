@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<head>
+  <style>
+  ul {
+  white-space: nowrap;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+}
+  </style>
+</head>
+{% endblock %}
 {% block body %}
 <body>
-	{% for product in products %}
-		<img src="{{ product.image.url }}" width=100 heigh=100>
-		<a href="shop/productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
-		 </br>
+	<ul>
+	{% for product in products %}		
+		<li>
+			<a href="shop/productdetail/{{ product.title }}/" href="shop/productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}
+			<img src="{{ product.image.url }}" width=100 heigh=100 ></a>
+		</li>
 	{% endfor %}
+	</ul>
 </body>
 {% endblock %}

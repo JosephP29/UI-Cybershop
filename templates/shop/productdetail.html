@@ -9,5 +9,9 @@
 	<p>Product: {{ product.title }}</p>
 	<p>Description: {{ product.description  }}</p>
 	<p>Price: {{ product.price }}</p>
-	<button type="buystock" onclick="location.href='/shop/buy_product/{{ product }}/'">Buy It Now</button>
+	{% if user.is_authenticated %}
+		<button type="buystock" onclick="location.href='/shop/buy_product/{{ product }}/'">Buy It Now</button>
+	{% else %}
+		<button type="buystock" onclick="location.href='/accounts/register'">Sign Up</button>
+	{% endif %}
 {% endblock %}
