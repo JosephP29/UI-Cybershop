@@ -9,4 +9,5 @@
 	<p>Product: {{ product.title }}</p>
 	<p>Description: {{ product.description  }}</p>
 	<p>Price: {{ product.price }}</p>
+	<button type="buystock" onclick="location.href='/shop/buy_product/{{ product }}/'">Buy It Now</button>
 {% endblock %}

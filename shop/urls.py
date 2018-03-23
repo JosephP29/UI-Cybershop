@@ -19,4 +19,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^productdetail/(?P<title>\w+)/$', views.productdetail),
+    url(r'^buy_product/(?P<title>\w+)/$', views.buy_product),
 ]
