@@ -1,24 +1,2 @@
-<html>
-	<head>
-		<link rel="stylesheet" href="index.css">
-		{% block head %}
-      	<title>Cybershop: Online Shopping Done Right</title>
-  		{% endblock %}
-	</head>
-{% block body %}
-	<div class="test">
-		<div>
-			<div>
-				<button class="button" onclick="location.href='accounts/register/'">Sign Up!</button>
-			</div>
-		</div>
-	</div>
-	<p class="loginRedirect">
-		Already have an account? <a href="accounts/login">Login</a>
-	</p>
-	<form type="get" action="." style="margin: 0">
-    	<input  id="search_box" type="text" name="search_box"  placeholder="Search for item" >
-    	<button id="search_submit" type="submit" >Search</button>
-	</form>	
-</html>
-{% endblock%}
+{% extends 'base.html' %}
+
