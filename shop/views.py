@@ -49,3 +49,14 @@ def searchresults(request):
 			return render(request, "index.html", {})
 	else:
 		return render(request, "index.html", {}) 
+
+def cat(request):
+	if request.method == 'GET':
+		search_category = request.GET.get('searchCat')
+		if search_category:
+			status = Product.objects.filter(category__icontains=search_category)
+			return render(request, "index.html", {"products": status})
+		else:
+			return render(request, "index.html", {})
+	else:
+		return render(request, "index.html", {}) 

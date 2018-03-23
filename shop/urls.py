@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^productdetail/(?P<title>\w+)/$', views.productdetail),
     url(r'^buy_product/(?P<title>\w+)/$', views.buy_product),
 	url(r'^searchresults/$', views.searchresults, name="searchresults"),
+    url(r'^cat/$', views.cat, name="cat"),   
 ]
