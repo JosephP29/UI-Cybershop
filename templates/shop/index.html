@@ -6,7 +6,8 @@
 <body>
 	<h1>This is the shop page.</h1>
 	{% for product in products %}
-		{{product.title}} </br>
+		<a href="productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
+		 </br>
 	{% endfor %}
 </body>
 </html>
