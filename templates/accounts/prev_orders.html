@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>Order History</title>
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Previous Orders</h1>
+		<table class="table table-condensed table-striped table-hover">
+	    <tr>
+	      <th>Date</th>
+	      <th>Product</th>
+	      <th>Price/Unit</th>
+	      <th>Units</th>
+	      <th>Purchase Total</th>
+	    </tr>
+		{% for order in prevOrders %}
+			<tr>
+				<td><p>{{ order.date_bought }}</p></td>
+				<td><p>{{ order.product }}</p></td>
+				<td><p>{{ order.price }}</p></td>
+				<td><p>{{ order.units }}</p></td>
+				<td><p>{{ order.total }}</p></td>
+			</tr>
+		{% endfor %}
+	</div>
+{% endblock %}
+		

@@ -24,11 +24,10 @@ def buy_product(request, title):
 		buy_form = BuyProductForm(request.POST)
 		if buy_form.is_valid():
 			buy_form = buy_form.save(commit=False)
-			buy_form.user = request.user
-			buy_form.title = product.title
+			buy_form.owner = request.user
+			buy_form.product = product.title
 			buy_form.price = product.price
 			buy_form.total = buy_form.price * buy_form.units
-			print(buy_form.total)
 			buy_form.save()
 
 			PurchaseOrder.objects.create(owner=request.user, units=buy_form.units, title=title, price=buy_form.total)

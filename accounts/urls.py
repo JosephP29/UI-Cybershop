@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^logout/$', logout, {'template_name': 'accounts/logout.html'}),
     url(r'^profile/$', views.profile, name='accounts/profile'),
     url(r'^register/$', views.register, name='register'),
+    url(r'^prev_orders/$', views.prev_orders, name='prev_orders')
 ]

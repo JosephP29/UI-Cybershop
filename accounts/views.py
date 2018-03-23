@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from accounts.forms import RegistrationForm
 from django.contrib.auth import logout
+from shop.models import BuyReceipt
 
 from django.http import HttpResponse
 
@@ -26,7 +27,11 @@ def register(request):
 		return render(request, 'accounts/reg_form.html', args)
 
 def logout(request):
-	print("hello")
 	logout(request)
 	return redirect(request, 'accounts/login.html')
 
+def prev_orders(request):
+	prevOrders = BuyReceipt.objects.filter(owner=request.user)
+	print(prevOrders)
+	args = {'prevOrders': prevOrders}
+	return render(request, 'accounts/prev_orders.html', args)

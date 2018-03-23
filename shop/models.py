@@ -24,7 +24,7 @@ class PurchaseOrder(models.Model):
 
 
 class BuyReceipt(models.Model):
-	owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+	owner = models.ForeignKey(User, on_delete=models.CASCADE)
 	product = models.CharField(max_length=200)
 	price = models.PositiveIntegerField()
 	units = models.PositiveIntegerField()
@@ -34,5 +34,5 @@ class BuyReceipt(models.Model):
 
 
 	def __str__(self):
-		string = str(self.owner) + self.product
+		string = str(self.owner) + " - " + self.product
 		return string
