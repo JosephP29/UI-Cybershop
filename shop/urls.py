@@ -19,9 +19,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^productdetail/(?P<title>\w+)/$', views.productdetail),
-<<<<<<< HEAD
     url(r'^buy_product/(?P<title>\w+)/$', views.buy_product),
-=======
 	url(r'^searchresults/$', views.searchresults),
->>>>>>> 011248de6352dba3cb8ce10533633158fd846892
 ]

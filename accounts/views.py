@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from accounts.forms import RegistrationForm
+from django.contrib.auth import logout
 
 from django.http import HttpResponse
 
@@ -9,7 +10,9 @@ def index(request):
 	return HttpResponse("Accounts index page.")
 
 def profile(request):
-	return render(request, "accounts/profile.html")
+	user = request.user
+	args = { 'user': request.user }
+	return render(request, "accounts/profile.html", args)
 
 def register(request):
 	if request.method == 'POST':
@@ -21,4 +24,9 @@ def register(request):
 		form = RegistrationForm()
 		args = {'form': form}
 		return render(request, 'accounts/reg_form.html', args)
+
+def logout(request):
+	print("hello")
+	logout(request)
+	return redirect(request, 'accounts/login.html')
 
