@@ -1,2 +1,11 @@
 {% extends 'base.html' %}
 
+{% block body %}
+<body>
+	{% for product in products %}
+		<img src="{{ product.image.url }}" width=100 heigh=100>
+		<a href="shop/productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
+		 </br>
+	{% endfor %}
+</body>
+{% endblock %}
