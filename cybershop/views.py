@@ -6,3 +6,6 @@ def index(request):
 	productList = Product.objects.all()
 	args = { 'products': productList }
 	return render(request, 'index.html', args)
+
+def help(request):
+	return render(request, 'help.html')

@@ -17,7 +17,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.index, name='/shop/'),
     url(r'^productdetail/(?P<title>\w+)/$', views.productdetail),
     url(r'^buy_product/(?P<title>\w+)/$', views.buy_product),
 	url(r'^searchresults/$', views.searchresults),

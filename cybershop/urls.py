@@ -22,10 +22,10 @@ from django.conf.urls.static import static, serve
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^help/$', views.help, name='/help/'),
     url('admin/', admin.site.urls),
     url(r'^shop/', include('shop.urls')),
     url(r'^accounts/', include('accounts.urls')),
-    #url('login/', view.login)
 ]
 
 if settings.DEBUG:
