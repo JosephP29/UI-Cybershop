@@ -4,35 +4,6 @@
 {% block head %}
 <head>
   <style>
-        button {
-          background-color: blue;
-          border: none;
-          color: white;
-          bottom: 205px;
-          border-radius: 6px;
-          border: 2px solid gray;
-          font-size: 30px;
-          margin-left: -68px;
-        }
-        .button2 {
-          background-color: blue;
-          border: none;
-          color: white;
-          bottom: 100px;
-          border-radius: 6px;
-          border: 2px solid gray;
-          font-size: 20px;
-        }
-        .button:hover {
-          background-color: orange;
-          color: white;
-          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-        }
-        .button:active {
-          background-color: #3e8e41;
-          box-shadow: 0 5px #666;
-          transform: translateY(4px);
-        }
       table {
         font-family: arial, sans-serif;
         height: 50%;
@@ -59,47 +30,6 @@
         margin-right: 350px;
         top: 25%;
       }
-      #overlay {
-        position: fixed;
-        display: none;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0);
-        z-index: 2;
-        cursor: pointer;
-      }
-      #text{
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        color: red;
-        display: none;
-      }
-      #text2{
-        font-size: 20px;
-        text-align: center;
-        font-weight: bold;
-        color: red;
-        display: none;
-      }
-      #text3{
-        font-size: 20px;
-        text-align: center;
-        font-weight: bold;
-        color: red;
-        display: none;
-      }
-      #text4{
-        font-size: 20px;
-        text-align: left;
-        font-weight: bold;
-        color: red;
-        display: none;
-      }
   </style>
   <title>Profile Page</title>
 </head>
@@ -107,23 +37,45 @@
 
 {% block body %}
 
-<div id="overlay" onclick="off()"> </div>
-
 <div class="container">
-  <div align="right"><button onclick="on()" class="button2">?</button></div>
-  <h2>Welcome to your account, Username</h2>
-  <br/>
-  <br/>
-  <h>Change your Preferred Payment Method</h>
-  <br/>
-  <h>Past Orders<h>
-  <br/>
-  <h>Change your Preferred Delivery Address</h>
-  <br/>
-  <h>Change Email or Password</h>
-  <br/>
-  <h>Enable Child-Lock Account Verification PIN</h>
-  <br/>
+            <div class="panel-heading">
+              <br/>
+              <h class="panel-title"> Welcome back, abc123 !</h2>
+              <br/>
+              <br/>
+              <br/>
+              <button type="submit">Update Information</button>
+              <br/>
+              <br/>
+              <br/>
+            </div>
+                  <table align="left">
+                    <tbody>
+                      <tr>
+                        <td>Payment Information:    </td>
+                        <td>****-****-****-1234</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth:    </td>
+                        <td>01/01/2000</td>
+                      </tr>
+                        <tr>
+                        <td>Gender:    </td>
+                        <td>Male</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address:    </td>
+                        <td>1 UTSA Circle, San Antonio, TX</td>
+                      </tr>
+                      <tr>
+                        <td>Your Preferred Email:    </td>
+                        <td><a href="mailto:student@utsa.edu">student@utsa.edu.com</a></td>
+                      </tr>
+                        <td>Your Primary Phone Number:    </td>
+                        <td>123-456-7890</td>
+                     
+                    </tbody>
+                  </table>
 </div>
 
 {% endblock %}
