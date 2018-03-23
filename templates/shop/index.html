@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Shop Page</title>
-</head>
+{% extends 'base.html' %}
+
+{% block body %}
 <body>
 	<h1>This is the shop page.</h1>
 	{% for product in products %}
@@ -10,4 +8,4 @@
 		 </br>
 	{% endfor %}
 </body>
-</html>
+{% endblock %}
