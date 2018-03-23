@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^$', views.index, name='/shop/'),
     url(r'^productdetail/(?P<title>\w+)/$', views.productdetail),
     url(r'^buy_product/(?P<title>\w+)/$', views.buy_product),
-	url(r'^searchresults/$', views.searchresults),
+	url(r'^searchresults/$', views.searchresults, name="searchresults"),
 ]

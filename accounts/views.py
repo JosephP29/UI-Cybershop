@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from accounts.forms import RegistrationForm
 from django.contrib.auth import logout
@@ -10,6 +11,7 @@ from django.http import HttpResponse
 def index(request):
 	return HttpResponse("Accounts index page.")
 
+@login_required
 def profile(request):
 	user = request.user
 	args = { 'user': request.user }
@@ -30,8 +32,8 @@ def logout(request):
 	logout(request)
 	return redirect(request, 'accounts/login.html')
 
+@login_required
 def prev_orders(request):
 	prevOrders = BuyReceipt.objects.filter(owner=request.user)
-	print(prevOrders)
 	args = {'prevOrders': prevOrders}
 	return render(request, 'accounts/prev_orders.html', args)

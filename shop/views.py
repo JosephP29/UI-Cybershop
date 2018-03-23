@@ -40,6 +40,12 @@ def buy_product(request, title):
 	return render(request, 'shop/buy_product.html')
 
 def searchresults(request):
-	productList = Product.objects.all()
-	args = { 'products': productList }
-	return render(request, 'shop/searchresults.html', args)	
+	if request.method == 'GET':
+		searchProduct = request.GET.get('searchProd')
+		if searchProduct:
+			status = Product.objects.filter(title__icontains=searchProduct)
+			return render(request, "index.html", {"products": status})
+		else:
+			return render(request, "index.html", {})
+	else:
+		return render(request, "index.html", {}) 
