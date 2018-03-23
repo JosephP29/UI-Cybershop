@@ -17,18 +17,18 @@
 <title>CyberShop: Online Shopping Done Right</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-  <a class="navbar-brand" href="accounts/login">Sign Up</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../../accounts/register">Sign Up</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="accounts/profile">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../../accounts/login">Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="accounts/profile">Account </a>
+        <a class="nav-link" href="../../accounts/profile">Account </a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="../../shop">Previous Orders </a>
@@ -55,7 +55,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-  <form class="form-inline">
+  <form class="form-inline" method="post" name="myForm" id="myForm">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>

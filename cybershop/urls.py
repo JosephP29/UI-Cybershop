@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static, serve
 
 urlpatterns = [
     url(r'^$', views.index),
@@ -25,3 +27,9 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     #url('login/', view.login)
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$',
+            serve, { 'document_root':
+                settings.MEDIA_ROOT, }), ]

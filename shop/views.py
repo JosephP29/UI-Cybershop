@@ -16,6 +16,7 @@ def productdetail(request, title):
 	}
 	return render(request, 'shop/productdetail.html', args)
 
+<<<<<<< HEAD
 def buy_product(request, title):
 	product = Product.objects.get(title=title)
 	user = request.user
@@ -39,3 +40,9 @@ def buy_product(request, title):
 		return render(request, 'shop/buy_product.html', args)
 
 	return render(request, 'shop/buy_product.html')
+=======
+def searchresults(request):
+	productList = Product.objects.all()
+	args = { 'products': productList }
+	return render(request, 'shop/searchresults.html', args)	
+>>>>>>> 011248de6352dba3cb8ce10533633158fd846892

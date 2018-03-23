@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
+{% block head %}
+	<title>SEARCH RESULTS</title>
+{% endblock %}
+
 {% block body %}
-<body>
-	<h1>This is the shop page.</h1>
+  <center><h1>search results listed here baby</h1> <br><br><br>
 	{% for product in products %}
-		<img src="{{ product.image.url }}" width=100 heigh=100>
 		<a href="productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
 		 </br>
-	{% endfor %}
-</body>
-{% endblock %}
+	{% endfor %}	
+{% endblock%}
