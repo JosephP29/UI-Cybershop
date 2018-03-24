@@ -54,6 +54,9 @@ def cat(request):
 	if request.method == 'GET':
 		search_category = request.GET.get('searchCat')
 		if search_category:
+			if search_category == "All":
+				status = Product.objects.all()
+				return render(request, "index.html", {"products": status})
 			status = Product.objects.filter(category__icontains=search_category)
 			return render(request, "index.html", {"products": status})
 		else:
