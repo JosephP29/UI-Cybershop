@@ -1,58 +1,42 @@
+<!DOCTYPE html>
+<html>
 {% extends 'base.html' %}
-
 {% block head %}
-	<title>Help Page</title>
-{% endblock %} 
-
-{% block body %}
 	<head>
-  		<meta name="viewport" content="width=device-width, initial-scale=1">
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-	
-	<div class="container">
-		<br/>
-		<br/>
-	</div>	
+		<style>
+			p {
+				font-size:20px;
+				padding-left: 10px;
+			}
+			h2, h3 {
+				font-weight: bold;
+			}
+			.title {
+				font-size: 50px;
+			}
+		</style>
+		<title>FAQs</title>
+	</head>	
+	{% endblock %}
 
-	<!--FAQ?-->
-	<div class="container">
-  		<h2>Frequenty Asked Questions</h2>
-  			<p></p>
-  			<div class="panel-group" id="accordion">
-   			 <div class="panel panel-default">
-     			 <div class="panel-heading">
-       			 <h4 class="panel-title">
-        			  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How do you Register for Cybershop?</a>
-        		</h4>
-     		 </div>
-      		<div id="collapse1" class="panel-collapse collapse in">
-       		 		<div class="panel-body">Text 1 for Question 1</div>
-     		 	</div>
-    				</div>
-   		 		<div class="panel panel-default">
-     		<div class="panel-heading">
-        		<h4 class="panel-title">
-          			<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">How do I refund a product?</a>
-        		</h4>
-      		</div>
-      			<div id="collapse2" class="panel-collapse collapse">
-        			<div class="panel-body">Text 2 for Question 2</div>
-      		</div>
-    	</div>
-    	<div class="panel panel-default">
-      		<div class="panel-heading">
-        		<h4 class="panel-title">
-          			<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">How do I change my password?</a>
-        		</h4>
-      		</div>
-      		<div id="collapse3" class="panel-collapse collapse">
-       	 			<div class="panel-body">Text 3 for Question 3</div>
-      			</div>
-    		</div>
-  		</div> 
+	{% block body %}
+	<div align="center"><h2>Frequently Asked Questions/Help</h2></div>
+	<div class="container">	
+		<ol>
+			<li><h3>What is CyberShop?</h3></li>
+			<p>
+				CyberShop is an e-commerce website.
+			</p>
+			<li><h3>Who created CyberShop?</h3></li>
+			<p>
+				Cybershop was created by a group of students - Akash Srichandan, Joseph Price, Richard Trest, Felix Benavides, and Fabian De Soto.
+			</p>
+			<li><h3>Can anyone see my information?</h3></li>
+			<p>
+				No, the only people who can see your information are the system admin and yourself.
+			</p>
+		</ol>
+	</body>
 	</div>
-
-{% endblock %}
+	{% endblock %}
+</html>

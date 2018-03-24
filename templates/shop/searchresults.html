@@ -21,7 +21,14 @@
 {% endblock %}
 
 {% block body %}
+<div class="container">
   <h1>search results listed here baby</h1> <br><br><br>
+</div>
+  {% if products.count == 0 %}
+  <div class="container">
+  	<h2>No results found :(</h2>
+  </div>
+  {% endif %}
 	{% for product in products %}
 	<a href="/shop/productdetail/{{ product.title }}/">
 		<div class="container">
