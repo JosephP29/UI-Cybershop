@@ -19,10 +19,8 @@ class BuyProductForm(forms.ModelForm):
 	def save(self, commit=True):
 		buy_receipt = super(BuyProductForm, self).save(commit=False)
 		buy_receipt.units = self.cleaned_data['units']
-		print(commit)
+		
 		if commit:
 			buy_receipt.save()
-			print("***************SUCCESFUL COMMIT***************")
-		else:
-			print("***************COMMIT FAILED***************")
+
 		return buy_receipt

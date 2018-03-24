@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import UserChangeForm
+#from django.contrib.auth.forms import UserChangeForm
 from accounts.forms import RegistrationForm
 from django.contrib.auth import logout
 from shop.models import BuyReceipt
+from accounts.forms import EditProfileForm
 
 from django.http import HttpResponse
 
@@ -42,12 +43,12 @@ def prev_orders(request):
 @login_required
 def edit_profile(request):
 	if request.method == 'POST':
-		form = UserChangeForm(request.POST, instance=request.user)
+		form = EditProfileForm(request.POST, instance=request.user)
 
 		if form.is_valid():
 			form.save()
 			return redirect('/accounts/profile')
 	else:
-		form = UserChangeForm(instance=request.user)
+		form = EditProfileForm(instance=request.user)
 		args = {'form': form}
 		return render(request, 'accounts/edit_profile.html', args)
