@@ -13,6 +13,9 @@ class BuyProductForm(forms.ModelForm):
 			'total',
 			'cc_num',
             )
+		labels = {
+			'cc_num': 'Credit Card Number'
+			}
 
 		exclude = ('owner', 'product', 'price', 'total')
 

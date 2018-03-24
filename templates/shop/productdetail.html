@@ -5,8 +5,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Product Detail Page</h1>
-	<p>Product: {{ product.title }}</p>
+<body>
+	<div class="container">
+	<div class="column">
+	<h1>{{ product.title }}</h1>
+	<p><img src="{{ product.image.url }}" width=300 height=300></p>
 	<p>Description: {{ product.description  }}</p>
 	<p>Price: {{ product.price }}</p>
 	{% if user.is_authenticated %}
@@ -14,4 +17,7 @@
 	{% else %}
 		<button type="buystock" onclick="location.href='/accounts/register'">Sign Up</button>
 	{% endif %}
+</div>
+</div>
+</body>
 {% endblock %}

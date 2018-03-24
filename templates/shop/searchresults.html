@@ -1,13 +1,49 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<head>
+	<style>
+	.row {
+  border: thin solid;
+  border-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  background-color: #AFEEEE
+}
+.column {
+  flex: 20%;
+  padding: 0 4px;
+}
+</style>
 	<title>SEARCH RESULTS</title>
+</head>
 {% endblock %}
 
 {% block body %}
-  <center><h1>search results listed here baby</h1> <br><br><br>
+  <h1>search results listed here baby</h1> <br><br><br>
 	{% for product in products %}
-		<a href="productdetail/{{ product.title }}/"  title="Purchase {{ product.title }}">{{ product.title }}</a>
+	<a href="/shop/productdetail/{{ product.title }}/">
+		<div class="container">
+  			<div class="row">
+				<div>		
+					<img src="{{ product.image.url }}" width=200 height=200 >
+				</div>
+				<div class="column">
+				<div style="font-size:20px">
+					{{ product.title }}
+				</br>
+				</div>
+				<div style="font-size:20px">
+					${{ product.price }}
+				</div>	
+				<div style="font-size:20px">		
+					{{ product.description }}
+				</div>
+				</div>
+			</div>
+		</div>
+		</a>
 		 </br>
 	{% endfor %}	
 {% endblock%}
